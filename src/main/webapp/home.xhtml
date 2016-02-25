@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns=		"http://www.w3.org/1999/xhtml"
+		xmlns:ui=	"http://java.sun.com/jsf/facelets"
+		xmlns:h=	"http://java.sun.com/jsf/html"
+		xmlns:f=	"http://java.sun.com/jsf/core"
+		xmlns:sec=	"http://www.springframework.org/security/facelets/tags"
+		xmlns:util=	"http://java.sun.com/jsf/composite/components/util"
+        xmlns:p=	"http://primefaces.org/ui">
+<ui:define name="body">
+	<h:form rendered=true>
+		<p:menubar>
+			<p:menuitem value="Home" />
+			<p:menuitem value="Produtos" />
+			<p:menuitem value="Login" />
+		</p:menubar>
+		<p:imageSwitch effect="shuffle">
+			<ui:repeat value="#{homeCtrl.destaques}" var="destaque">
+				<p:graphicImage value="#{destaque}" />
+			</ui:repeat>
+		</p:imageSwitch>
+		<p:contentFlow var="produto" value="#{homeCtrl.produtos}">
+			<p:graphicImage value="/images/#{produto}" styleClass="content" />
+		</p:contentFlow>
+	
+		<p:galleria value="#{homeCtrl.galerias}" var="galeria">
+			<p:graphicImage value="#{galeria.path}" title="#{galeria.title}"
+				alt="#{galeria.description}" />
+		</p:galleria>
+	</h:form>
+</ui:define>
+</html>
