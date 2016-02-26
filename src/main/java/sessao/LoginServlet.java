@@ -23,10 +23,10 @@ public class LoginServlet extends HttpServlet {
     String usuario = req.getParameter("usuario");
     String senha = req.getParameter("senha");
     //Usuário válido.
-    if (usuario != null && usuario.equals("joao")
+    if (usuario != null && usuario.equals("vitor")
         && senha!= null && senha.equals("123")) {
       sessao.setAttribute("usuarioLogado", true);
-      resp.sendRedirect("menu");
+      resp.sendRedirect("pagina-privada");
     } else {
       sessao.setAttribute("usuarioLogado", false);
       req.getRequestDispatcher("login.jsp").forward(req, resp);
