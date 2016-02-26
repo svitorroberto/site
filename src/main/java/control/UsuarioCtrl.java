@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.UsuarioDao;
 import model.Usuario;
 
 @WebServlet(value = "/bancodados/CadastrarAluno")
@@ -56,6 +57,8 @@ public class UsuarioCtrl {
 		usuario.setRespostaSecreta(rSecreta);
 		usuario.setTelefone(telefone);
 		usuario.setTipo(tipo);
+		
+		UsuarioDao
 	
 	}
 }

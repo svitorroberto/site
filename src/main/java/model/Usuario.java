@@ -3,7 +3,7 @@ package model;
 //@Table(name="usuario")
 public class Usuario {
 	//@Column
-	private Long id;
+	private Long matricula;
 	private String login;
 	private String nomeCompleto;
 	private String senha;
@@ -14,11 +14,12 @@ public class Usuario {
 	private String telefone;
 	private String tipo;
 	
-	public Long getId() {
-		return id;
+
+	public Long getMatricula() {
+		return matricula;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setMatricula(Long matricula) {
+		this.matricula = matricula;
 	}
 	public String getNomeCompleto() {
 		return nomeCompleto;
