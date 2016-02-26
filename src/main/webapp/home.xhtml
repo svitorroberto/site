@@ -6,8 +6,8 @@
 		xmlns:sec=	"http://www.springframework.org/security/facelets/tags"
 		xmlns:util=	"http://java.sun.com/jsf/composite/components/util"
         xmlns:p=	"http://primefaces.org/ui">
-<ui:define name="body">
-	<h:form rendered=true>
+<h:body name="body">
+	<h:form rendered="true">
 		<p:menubar>
 			<p:menuitem value="Home" />
 			<p:menuitem value="Produtos" />
@@ -27,5 +27,5 @@
 				alt="#{galeria.description}" />
 		</p:galleria>
 	</h:form>
-</ui:define>
+</h:body>
 </html>
