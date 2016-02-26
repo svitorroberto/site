@@ -6,8 +6,8 @@
 		xmlns:sec=	"http://www.springframework.org/security/facelets/tags"
 		xmlns:util=	"http://java.sun.com/jsf/composite/components/util"
         xmlns:p=	"http://primefaces.org/ui"><h:head></h:head>
-<ui:define name="body">
-	<h:form rendered=true>
+<h:body>
+	<h:form rendered="true">
 		<p:menubar>
 			<p:menuitem value="Home" />
 			<p:menuitem value="Produtos" />
@@ -30,7 +30,7 @@
 		</p:inputText>
 		<p:commandButton id="entrar" value="Entrar" action="#{loginCtrl.fazerLogin}" process="senha, usuario"/>																		
 	</p:panelGrid>
-</ui:define>
+
 
 </h:body>
 </html>
