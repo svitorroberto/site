@@ -11,7 +11,7 @@ public class Usuario {
 	private String dataNasc;
 	private String perguntaSecreta;
 	private String respostaSecreta;
-	private Long telefone;
+	private String telefone;
 	private String tipo;
 	
 	public Long getId() {
@@ -62,10 +62,10 @@ public class Usuario {
 	public void setLogin(String login) {
 		this.login = login;
 	}
-	public Long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(Long telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 	public String getTipo() {
