@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns=		"http://www.w3.org/1999/xhtml"
+		xmlns:ui=	"http://java.sun.com/jsf/facelets"
+		xmlns:h=	"http://java.sun.com/jsf/html"
+		xmlns:f=	"http://java.sun.com/jsf/core"
+		xmlns:sec=	"http://www.springframework.org/security/facelets/tags"
+		xmlns:util=	"http://java.sun.com/jsf/composite/components/util"
+        xmlns:p=	"http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Home</title>
+</h:head> 
+<h:body name="body">
+	<h:form rendered="true">
+<p:menubar style="font: bold 18px arial,sans-serif; padding-left:40%" styleClass="ui-responsive">
+			<p:menuitem value="Home" url="./home.jsf" style="padding:10px"/>
+			<p:menuitem value="Produtos" url="./produtos.jsf" style="padding:10px"/>
+			<p:menuitem value="Login" url="./login.jsf" style="padding:10px"/>
+		</p:menubar>
+
+	</h:form>
+	<p:dataGrid var="produto" value="#{produtosCtrl.produtos}" columns="1" rows="12">
+		<p:column>
+			<p:panel header="#{produto.descricao}">
+				<h:panelGrid columns="4">
+				<p:column>
+					<p:imageSwitch effect="shuffle">
+						<ui:repeat value="#{produto.imagens}" var="imagens">
+							<p:graphicImage value="imagens" />
+						</ui:repeat>
+					</p:imageSwitch>
+				</p:column>
+				<p:column>
+					<h:outputText value="#{produto.detalhes}" />
+				</p:column>
+				<p:column>
+					<h:outputText value="#{produto.valor}" />
+				</p:column>
+				<p:column>
+					<p:button value="Comprar" action="#{vendaCtrl.addItem}"/>
+				</p:column>
+				</h:panelGrid>
+			</p:panel>
+		</p:column>
+	</p:dataGrid>
+</h:body>
+</html>
