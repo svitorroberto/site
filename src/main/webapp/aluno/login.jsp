@@ -7,7 +7,7 @@
 <body>
   <h1>Sessão</h1>
   <br>
-  <h2>Login Normal</h2>
+  <h2>Login Aluno</h2>
   <form action="login">
   Usuário (vitor): <input type="text" name="usuario"> 
   <br>
