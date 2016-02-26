@@ -8,8 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.UsuarioDao;
 import model.Usuario;
+import bo.UsuarioBo;
 
 @WebServlet(value = "/bancodados/CadastrarAluno")
 public class UsuarioCtrl {
@@ -58,7 +58,19 @@ public class UsuarioCtrl {
 		usuario.setTelefone(telefone);
 		usuario.setTipo(tipo);
 		
-		UsuarioDao
+		UsuarioBo ubo = new UsuarioBo(tipo);
+		ubo.incluir(usuario);
+		
+		req.setAttribute("usuario", usuario); //Passando um objeto para o JSP.
+
+	    List<Usuario> alunos = UsuarioBo.listar();
+
+	    req.setAttribute("alunos", alunos); //Passando uma coleção para o JSP.
+	    
+	    //Chamar o JSP apenas para mostrar o resultado.
+	    req.getRequestDispatcher("CadastroAlunoView.jsp").forward(req, resp);
+		
+		
 	
 	}
 }

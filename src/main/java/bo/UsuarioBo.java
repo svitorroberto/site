@@ -8,7 +8,7 @@ import fabrica.FabricaDeUsuarioDao;
 
 public class UsuarioBo {
 	  
-	  UsuarioDao usuarioDao;
+	  static UsuarioDao usuarioDao;
 	  
 	  public UsuarioBo(String tipoDeUsuario) {
 		  usuarioDao = FabricaDeUsuarioDao.novo(tipoDeUsuario);
@@ -20,7 +20,7 @@ public class UsuarioBo {
 		    }
 		  }
 
-		  public List<Usuario> listar() {
+		  public static List<Usuario> listar() {
 		    return usuarioDao.listar();
 		  }
 }
