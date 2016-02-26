@@ -1,0 +1,149 @@
+.dark{
+	background-color: #051d36;
+	color: #fff;
+}
+.light{
+	background-color: #fff;
+	color: #051d36;
+}
+header {
+		font-family: 'Graduate', cursive;
+		font-size:18px;
+	/*line-height:1.42857143;*/
+	background-color: #051d36;
+	color: #fff;
+	-webkit-border-bottom-left-radius: 80px;
+	-webkit-border-bottom-right-radius: 80px;
+	-moz-border-radius-bottomleft: 80px;
+	-moz-border-radius-bottomright: 80px;
+	border-bottom-left-radius: 80px;
+	border-bottom-right-radius: 80px;
+	height: 180px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+header:img{
+	
+}
+.circle_logo {
+	width: 180px;
+	height: 180px;
+	-webkit-border-radius: 180px;
+	-moz-border-radius: 180px;
+	border-radius: 180px;
+	margin-bottom: -15px;
+}
+a:link {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:visited{
+	text-decoration: none;
+	color: inherit;
+	
+}
+a:hover{
+	color: #1f6193;
+}
+
+.active{
+	color: #0479d3;
+}
+
+footer {
+	font-family: 'Graduate', cursive;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-top: 2px solid #051d36;
+	margin-top: 5px;
+	border-bottom: 2px solid #051d36;
+	-webkit-border-top-right-radius: 15px;
+	-webkit-border-top-left-radius: 15px;
+	-moz-border-radius-topright: 15px;
+	-moz-border-radius-topleft: 15px;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+footer a{
+	position: relative;
+	top: -7px;
+	left: 3px;
+}
+
+#carousel_destaques {
+}
+#carousel_destaques .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#menu {
+	display: block;
+	text-align: center;
+}
+.expanded{
+	height: 340px;
+}
+
+.login {
+	width: 180px;
+	border: 2px solid #051d36;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: #051d36;
+	display: block;
+	color: #fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: 'Graduate', cursive;
+	font-size:15px;
+}
+
+.button_unificada {
+	background-color: #051d36;
+	color: #fff;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	padding: 3px;
+}
+.login .button_unificada {
+	margin-top: 4px;
+	font-family: 'Graduate', cursive;
+	font-size:12px;
+}
+
+.login input {
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	padding: 3px;
+}
+
+.titulo_barra_full_width {
+	text-align: center;
+	font-family: 'Graduate', cursive;
+	font-size:18px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding: 3px;
+	text-shadow: 2px 2px #000;
+}
+
+#carousel_destaque .item img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+	
+.topproduto {
+	width: 250px;
+
+}

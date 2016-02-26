@@ -26,10 +26,10 @@ public class LoginServlet extends HttpServlet {
     if (usuario != null && usuario.equals("vitor")
         && senha!= null && senha.equals("123")) {
       sessao.setAttribute("usuarioLogado", true);
-      resp.sendRedirect("pagina-privada");
+      resp.sendRedirect("pagina-privada.html");
     } else {
       sessao.setAttribute("usuarioLogado", false);
-      req.getRequestDispatcher("login.jsp").forward(req, resp);
+      req.getRequestDispatcher("login.jsf").forward(req, resp);
     }
   }
 

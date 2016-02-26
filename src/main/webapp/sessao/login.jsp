@@ -9,7 +9,7 @@
   <br>
   <h2>Login</h2>
   <form action="login">
-  Usuário (joao): <input type="text" name="usuario"> 
+  Usuário (vitor): <input type="text" name="usuario"> 
   <br>
   Senha (123): <input type="password" name="senha">
   <br>
