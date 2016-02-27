@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns=		"http://www.w3.org/1999/xhtml"
+		xmlns:ui=	"http://java.sun.com/jsf/facelets"
+		xmlns:h=	"http://java.sun.com/jsf/html"
+		xmlns:f=	"http://java.sun.com/jsf/core"
+        xmlns:p=	"http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Home</title>
+    <h:body>
+        <h1>Cadastro de usuario</h1>
+        <h:dataTable var="usuario" value="#{usuariocontroller.listarUsuarios}">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Matricula"/>
+                </f:facet>
+                <h:outputText value="#{usuario.matricula}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="nome"/>
+                </f:facet>
+                <h:outputText value="#{usuario.nome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="login"/>
+                </f:facet>
+                <h:outputText value="#{usuario.login}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="E-mail"/>
+                </f:facet>
+                <h:outputText value="#{usuario.email}"/>
+            </h:column>
+            
+            
+            
+            
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Isbn"/>
+                </f:facet>
+                <h:outputText value="#{livro.isbn}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Avaliação"/>
+                </f:facet>
+                <h:outputText value="#{livro.avaliacao}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Alterar"/>
+                </f:facet>
+                <h:form>
+                    <h:commandButton action="#{livroController.prepararAlterarLivro}" value="Alterar"/>
+                    </h:form>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Excluir"/>
+                </f:facet>
+                <h:form>
+                    <h:commandButton action="#{livroController.excluirLivro}" value="Excluir"/>
+                    </h:form>
+            </h:column>
+        </h:dataTable>
+        <br/>
+        <h:form>
+            <h:commandLink value="Novo Livro" action="#{livroController.prepararAdicionarLivro}"/>
+        </h:form>
+    </h:body>
+</html>

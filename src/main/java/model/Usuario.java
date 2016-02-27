@@ -1,8 +1,14 @@
 package model;
-//@Entity
-//@Table(name="usuario")
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="usuario")
 public class Usuario {
 	//@Column
+	@Id
 	private Long matricula;
 	private String login;
 	private String nomeCompleto;
