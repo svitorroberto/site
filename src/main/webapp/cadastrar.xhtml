@@ -7,44 +7,65 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/estilo.css"/>
 </h:head>
-<h:body name="body">
-Matricula: <h:inputText value="#{usuarilcontroller.usuario.matricula}" />
+
+<h:body>
+<div id="menu">
+    <a href="listar.jsf"><div id="itemmenu">Listar</div></a>
+    <a href="cadastrar.jsf"><div id="itemmenu-a">Cadastrar</div></a>
+    <a href="excluir.jsf"><div id="itemmenu">Excluir</div></a>
+</div>
+<div class="areaTabela">
+<h:form class="tabela">
+<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="10" columnClasses="label, value">
+<p>Matricula:</p> <p:inputText value="#{usuarioController.usuario.matricula}" required="true"/>
 	<br />
-Nome: <h:inputText value="#{usuarilcontroller.usuario.nome}" />
+<p>Nome:</p> <p:inputText value="#{usuarioController.usuario.nomeCompleto}" required="true"/>
 	<br />
-E-mail <h:inputText value="#{usuarilcontroller.usuario.email}" />
+<p>Login:</p> <p:inputText value="#{usuarioController.usuario.login}" required="true"/>
 	<br />
-Data de Nascimento: <h:inputText value="#{usuarilcontroller.usuario.dataNasc}" />
-	<br />
-Pergunta Secreta: <h:selectOneMenu value="#{usuarilcontroller.usuario.perguntasecreta}">
-		<f:selectItem itemLabel="Qual sua cor?" itemValue="Qual sua cor?" />
-		<f:selectItem itemLabel="Qual nome da sua mae?" itemValue="Qual nome da sua mae?" />
-		<f:selectItem itemLabel="Qual raca do seu cachorro" itemValue="Qual raca do seu cachorro" />
-	</h:selectOneMenu>
-	<br />
-Resposta Secreta: <h:inputText value="#{usuarilcontroller.usuario.respostasecreta}" />
-	<br />
-Telefone <h:inputText value="#{usuarilcontroller.usuario.telefone}" />
-	<br />
-Senha: <h:inputText value="#{usuarilcontroller.usuario.senha}" />
-	<br />
-Tipo <h:selectOneMenu value="#{usuarilcontroller.usuario.tipo}">
-		<f:selectItem itemLabel="Administrador" itemValue="Administrador" />
-		<f:selectItem itemLabel="Aluno" itemValue="Aluno" />
-	</h:selectOneMenu>
-	<br />
+<p>E-mail</p> <p:inputText value="#{usuarioController.usuario.email}" required="true"/>
+
 	
-	
-	<h:commandButton action="#{livroController.adicionarLivro}"
-		value="Inserir Novo Usuario" />
-	
-	<h:commandButton action="#{livroController.alterarLivro}"
-		value="Alterar Usuario" />
-	<br />
-	<h:commandLink action="index" value="Voltar" />
+<p:outputLabel for="popup" value="Data de Nascimento" />
+<p:calendar id="popup" value="#{usuarioController.usuario.dataNasc}" required="true">
+</p:calendar>
+
+        <p:outputLabel for="pergunta" value="Pergunta Secreta" />
+        <p:selectOneListbox id="pergunta" value="#{usuarioController.usuario.perguntaSecreta}">
+            <f:selectItem itemLabel="Qual sua cor?" 			 itemValue="Qual sua cor?" />
+            <f:selectItem itemLabel="Qual sua cidade natal?" 			 itemValue="Qual sua cidade natal?" />
+            <f:selectItem itemLabel="Qual seu time de futebol?" 			 itemValue="Qual seu time de futebol?" />
+        </p:selectOneListbox>
 
 
+Resposta Secreta: <p:inputText value="#{usuarioController.usuario.respostaSecreta}" required="true"/>
+	<br />
+Telefone <p:inputText value="#{usuarioController.usuario.telefone}" required="true"/>
+
+ 		<h:outputLabel for="pwd1" value="Senha" />
+        <p:password id="pwd1" value="#{usuarioController.usuario.senha}" match="pwd2" label="Password 1" required="true" />
+ 
+        <h:outputLabel for="pwd2" value="Repita a Senha" />
+        <p:password id="pwd2" value="#{usuarioController.usuario.senha}" label="Password 2" required="true" />
+	
+        <p:outputLabel for="tipo" value="Tipo" />
+        <p:selectOneListbox id="tipo" value="#{usuarioController.usuario.tipo}">
+            <f:selectItem itemLabel="Administrador" itemValue="Administrador" />
+            <f:selectItem itemLabel="Aluno" itemValue="Aluno" />
+        </p:selectOneListbox>
+        
+	<p:messages id="messages" showDetail="true" autoUpdate="true" />
+	<br/>
+	
+	<p:commandButton value="Inserir Novo Usuario" id="nonAjax1" actionListener="#{usuarioController.adicionarUsuario}" ajax="false" url="listar.jsf" icon="ui-icon-check"/>
+	<p:commandButton value="Alterar Usuario" id="nonAjax2" actionListener="#{usuarioController.alterarUsuario}" url="listar.jsf" ajax="false" />
+
+
+</h:panelGrid>
 	</h:form>
+	</div>
+	
 </h:body>
 </html>

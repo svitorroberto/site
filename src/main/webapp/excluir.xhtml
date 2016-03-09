@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/estilo.css"/>
+</h:head>
+
+<h:body>
+<div id="menu">
+    <a href="listar.jsf"><div id="itemmenu">Listar</div></a>
+    <a href="cadastrar.jsf"><div id="itemmenu">Cadastrar</div></a>
+    <a href="excluir.jsf"><div id="itemmenu-a">Excluir</div></a>
+</div>
+<div class="areaTabela">
+<h:form class="tabela">
+	<h:form>
+		<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="10" columnClasses="label, value">
+Matricula: <p:inputText value="#{usuarioController.usuario.matricula}"
+				required="true" />
+			<br />
+			<p:commandButton value="Excluir" id="nonAjax4" actionListener="#{usuarioController.excluirUsuario}" url="listar.jsf" ajax="false" />
+
+		</h:panelGrid>
+	</h:form>
+</h:form>
+</div>
+</h:body>
+</html>

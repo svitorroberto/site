@@ -34,8 +34,4 @@ public class Conexao {
 			e.printStackTrace();
 		}
 	}
-
-	public static void main(Sting args[]){
-		
-	}
 }

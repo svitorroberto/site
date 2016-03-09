@@ -6,9 +6,10 @@ import model.Usuario;
 
 public interface UsuarioDao {
 	
-	public void incluir(Usuario usuario);
-	public void excluir(int matricula);
-	public void alterar(int matricula);
+	public void inserir(Usuario usuario);
+	public void excluir(Usuario usuario);
+	public void alterar(Usuario usuario);
 	public List<Usuario> listar();
+	public Usuario buscaUsuario(Long matricula);
 
 }

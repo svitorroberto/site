@@ -1,0 +1,103 @@
+	@CHARSET "ISO-8859-1";
+
+body{
+	background-color: #191970;
+}
+.areaTabela{
+	position: relative;
+	float: left;
+	align: center;
+	width: 100%;
+	background-color: #191970;
+	padding: 15px;
+}
+tr{
+	color: white;
+	font-size: 20px;
+}
+.tabela{
+	position: relative;
+	float: left;
+	min-height: 800px;
+	width: 700px;
+	margin-left: 33%;
+	background-color: #000080;
+	border: 2px solid white;
+	color: white;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	
+}
+
+.areaTabela-listar{
+	position: relative;
+	float: left;
+	align: center;
+	width: 100%;
+	background-color: #191970;
+	
+}
+.tabela-listar{
+	position: relative;
+	float: left;
+	min-height: 800px;
+	margin-left: 5%;
+    margin-right: 5%;
+	background-color: #191970;
+	border: 2px solid white;
+	color: white;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	padding: 15px;
+}
+
+label, p{
+	color: white;
+}
+
+#menu{
+	position: relative;
+	float: left;
+	width: 700px;
+	margin-left: 33%;
+}
+#itemmenu{
+	position: relative;
+	float: left;
+	width: 33%;
+	height: 60px;
+	font-size: 30px;
+	text-align: center;
+	color: white;
+	padding-top: 15px;
+}
+#itemmenu-a{
+	position: relative;
+	float: left;
+	width: 33%;
+	height: 60px;
+	font-size: 30px;
+	text-align: center;
+	color: white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding-top: 15px;
+	background-color: #87CEFA;
+}
+
+
+a{
+	width: 33%;
+	height: 60px;
+}
+#itemmenu:active { 
+    background-color: white;
+    color: #191970;
+}
+.ui-selectonelistbox, .ui-selectmanymenu, .ui-multiselectlistbox-listcontainer {
+    width: 273px;
+    z-index: 999;
+}

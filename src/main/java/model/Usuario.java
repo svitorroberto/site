@@ -1,26 +1,63 @@
 package model;
 
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="usuario")
-public class Usuario {
-	//@Column
+public class Usuario implements Serializable{
+	
 	@Id
 	private Long matricula;
 	private String login;
+	@Column(name="nome")
 	private String nomeCompleto;
 	private String senha;
 	private String email;
-	private String dataNasc;
+	@Column(name="datanascimento")
+	private Date dataNasc;
+	@Column(name="psecreta")
 	private String perguntaSecreta;
+	@Column(name="rsecreta")
 	private String respostaSecreta;
 	private String telefone;
 	private String tipo;
 	
+	
 
+	public Usuario(Long matricula, String login, String nomeCompleto, String senha, String email, Date dataNasc, String perguntaSecreta, String respostaSecreta, String telefone, String tipo){
+		this.matricula = matricula;
+		this.login = login;
+		this.nomeCompleto = nomeCompleto;
+		this.senha = senha;
+		this.email = email;
+		this.dataNasc = dataNasc;
+		this.perguntaSecreta = perguntaSecreta;
+		this.respostaSecreta = perguntaSecreta;
+		this.telefone = telefone;
+		this.tipo = tipo;
+	}
+	public Usuario(){
+	
+	}
+	public void limpar(){
+		this.setDataNasc(null);
+		this.setEmail(null);
+		this.setLogin(null);
+		this.setMatricula(null);
+		this.setNomeCompleto(null);
+		this.setPerguntaSecreta(null);
+		this.setRespostaSecreta(null);
+		this.setSenha(null);
+		this.setTelefone(null);
+		this.setTipo(null);
+	}
 	public Long getMatricula() {
 		return matricula;
 	}
@@ -45,11 +82,13 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getDataNasc() {
-		return dataNasc;
+	public Date getDataNasc() {
+		return this.dataNasc;
 	}
-	public void setDataNasc(String dataNasc) {
-		this.dataNasc = dataNasc;
+	public void setDataNasc(Date dataNasc) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+		format.format(dataNasc);
+		this.dataNasc = dataNasc;		
 	}
 	public String getPerguntaSecreta() {
 		return perguntaSecreta;

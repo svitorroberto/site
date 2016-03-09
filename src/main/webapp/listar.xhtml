@@ -7,70 +7,53 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/estilo.css"/>
+</h:head>
     <h:body>
-        <h1>Cadastro de usuario</h1>
-        <h:dataTable var="usuario" value="#{usuariocontroller.listarUsuarios}">
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Matricula"/>
-                </f:facet>
+    <div id="menu">
+    <a href="listar.jsf"><div id="itemmenu-a">Listar</div></a>
+    <a href="cadastrar.jsf"><div id="itemmenu">Cadastrar</div></a>
+    <a href="excluir.jsf"><div id="itemmenu">Excluir</div></a>
+</div>
+<div class="areaTabela-listar">
+<h:form class="tabela-listar">
+        <p:dataTable var="usuario" value="#{usuarioController.usuarios}">
+            <p:column headerText="Matrícula" style="text-align:center">
                 <h:outputText value="#{usuario.matricula}" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="nome"/>
-                </f:facet>
-                <h:outputText value="#{usuario.nome}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="login"/>
-                </f:facet>
+            </p:column>
+            <p:column headerText="Nome">
+                <h:outputText value="#{usuario.nomeCompleto}"/>
+            </p:column>
+            <p:column headerText="Login" style="text-align:center">
                 <h:outputText value="#{usuario.login}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="E-mail"/>
-                </f:facet>
+            </p:column>
+            <p:column headerText="E-mail" style="width:250px">
                 <h:outputText value="#{usuario.email}"/>
-            </h:column>
-            
-            
-            
-            
-            
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Isbn"/>
-                </f:facet>
-                <h:outputText value="#{livro.isbn}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Avaliação"/>
-                </f:facet>
-                <h:outputText value="#{livro.avaliacao}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Alterar"/>
-                </f:facet>
-                <h:form>
-                    <h:commandButton action="#{livroController.prepararAlterarLivro}" value="Alterar"/>
-                    </h:form>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Excluir"/>
-                </f:facet>
-                <h:form>
-                    <h:commandButton action="#{livroController.excluirLivro}" value="Excluir"/>
-                    </h:form>
-            </h:column>
-        </h:dataTable>
+            </p:column>
+            <p:column headerText="Data de Nascimento" style="text-align:center">
+                <h:outputText value="#{usuario.dataNasc}">
+                	<f:convertDateTime pattern="yyyy/MM/dd" />
+                </h:outputText>1
+            </p:column>
+            <p:column headerText="Pergunta Secreta">
+                <h:outputText value="#{usuario.perguntaSecreta}"/>
+            </p:column>
+            <p:column headerText="Resposta Secreta">
+                <h:outputText value="#{usuario.respostaSecreta}"/>
+            </p:column>
+            <p:column headerText="Telefone" style="text-align:center">
+                <h:outputText value="#{usuario.telefone}"/>
+            </p:column>
+            <p:column headerText="Tipo" style="text-align:center">
+                <h:outputText value="#{usuario.tipo}"/>
+            </p:column>
+ 
+        </p:dataTable>
         <br/>
-        <h:form>
-            <h:commandLink value="Novo Livro" action="#{livroController.prepararAdicionarLivro}"/>
+        <center>
+		<p:commandButton value="Atualizar" id="nonAjax2" actionListener="#{usuarioController.listarUsuarios}" ajax="false" />
+		</center>
         </h:form>
+        </div>
     </h:body>
 </html>
